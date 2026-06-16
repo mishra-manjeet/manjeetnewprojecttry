@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Admin — Sarkari Result</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header"><div class="container"><a href="/index.html" class="brand">Sarkari Result</a></div></header>
+    <main class="container">
+      <div class="site-header" style="margin-bottom:20px;padding:18px 0;">
+        <a href="/index.html" class="brand">Sarkari Result</a>
+      </div>
+      <h2>Add Job / Result</h2>
+      <form id="adminForm" class="card" style="max-width:600px;">
+        <label for="title">Title</label>
+        <input id="title" required />
+        <label for="organization">Organization</label>
+        <input id="organization" />
+        <label for="location">Location</label>
+        <input id="location" />
+        <label for="description">Description</label>
+        <textarea id="description"></textarea>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:16px">
+          <button type="submit">Save</button>
+          <span id="status" style="color:var(--muted)"></span>
+        </div>
+      </form>
+    </main>
+    <script>
+    document.getElementById('adminForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = {
+        title: document.getElementById('title').value,
+        organization: document.getElementById('organization').value,
+        location: document.getElementById('location').value,
+        description: document.getElementById('description').value,
+      }
+      document.getElementById('status').textContent = 'Saving...'
+      try{
+        const res = await fetch('/api/jobs', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data) })
+        if(res.ok){ document.getElementById('status').textContent = 'Saved'; document.getElementById('adminForm').reset() }
+        else { const err = await res.json(); document.getElementById('status').textContent = err.error || 'Error' }
+      } catch(err){ document.getElementById('status').textContent = 'Error' }
+      setTimeout(()=>document.getElementById('status').textContent='',2000)
+    })
+    </script>
+  </body>
+</html>

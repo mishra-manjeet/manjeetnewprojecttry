@@ -1,0 +1,89 @@
+:root {
+  --bg-1: #f7f9ff;
+  --accent-1: #4f46e5;
+  --accent-2: #2563eb;
+  --muted: #475569;
+  --card: #ffffff;
+  --glass: rgba(255,255,255,0.7);
+  --success: #10b981;
+  --danger: #ef4444;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Poppins', Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(180deg, var(--bg-1), #ffffff 60%);
+  color: #0f172a;
+  -webkit-font-smoothing:antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+/* Topbar */
+.topbar { background: linear-gradient(135deg,var(--accent-1),var(--accent-2)); color: white; padding-bottom: 28px; }
+.topbar-inner { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:18px 20px; }
+.brand { display:flex; gap:18px; align-items:center; }
+.logo { font-weight:800; font-size:20px; color:white; letter-spacing:.4px }
+.logo .dot { color: #ffd166; margin-left:6px; font-weight:900 }
+.main-nav { display:flex; gap:14px; align-items:center }
+.main-nav a { color: rgba(255,255,255,0.92); padding:8px 12px; border-radius:10px; font-weight:600 }
+.main-nav a.nav-cta { background: rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.12) }
+.topbar-actions .whatsapp { background: #06d6a0; color: #043927; padding:8px 12px; border-radius:8px; font-weight:700 }
+
+/* Hero */
+.hero { display:grid; grid-template-columns: 1fr 360px; gap:28px; align-items:start; padding-top:10px }
+.hero-left h1 { font-size: clamp(1.6rem, 3.6vw, 2.8rem); margin:6px 0 12px }
+.eyebrow { font-size:12px; text-transform:uppercase; letter-spacing:.15em; opacity:.95 }
+.hero-copy { color: rgba(255,255,255,0.95); margin-bottom:18px }
+.hero-left { color:white; }
+.hero-actions { display:flex; gap:12px; margin:18px 0 }
+.button { padding:12px 18px; border-radius:12px; font-weight:700; cursor:pointer }
+.button-primary { background:white; color:var(--accent-1) }
+.button-secondary { background: rgba(255,255,255,0.12); color:white }
+
+.quick-search { display:flex; gap:10px; margin-top:18px }
+.quick-search input { flex:1; padding:12px 14px; border-radius:12px; border:none; font-size:14px }
+.quick-search button { padding:12px 14px; border-radius:12px; border:none; background:#ffb703; color:#082032; font-weight:700 }
+
+.hero-right { position:relative }
+.hero-badge { position:absolute; top:-28px; right:0; background:rgba(255,255,255,0.12); padding:8px 14px; border-radius:999px; font-weight:700 }
+.hero-panel { display:grid; grid-template-columns:1fr; gap:12px; }
+.hero-panel-item { background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); padding:18px; border-radius:14px; text-align:center; color:white }
+.hero-panel-item h3 { margin:0; font-size:1.25rem }
+
+/* Content cards */
+.hero-links { display:grid; grid-template-columns: repeat(1,1fr); gap:14px; margin:28px 0 }
+.hero-card { padding:18px; border-radius:14px; color:white; font-weight:800; display:flex; justify-content:space-between; align-items:center }
+.hero-card .meta { opacity:0.95; font-weight:600 }
+.hero-card.red { background: linear-gradient(90deg,#ff6b6b,#f43f5e) }
+.hero-card.yellow { background: linear-gradient(90deg,#ffd166,#f59e0b) }
+.hero-card.purple { background: linear-gradient(90deg,#8b5cf6,#7c3aed) }
+.hero-card.blue { background: linear-gradient(90deg,#38bdf8,#0ea5e9) }
+
+.overview-row { display:grid; grid-template-columns:1fr; gap:18px }
+.overview-card { background:var(--card); border-radius:14px; padding:22px; box-shadow: 0 8px 30px rgba(19,24,31,0.06) }
+.overview-card.highlight { background:linear-gradient(180deg,var(--accent-1),var(--accent-2)); color:white }
+.overview-card h2 { margin-top:0 }
+.link-list { list-style:none; padding:0; margin:0 }
+.link-list li { padding:10px 0; border-bottom:1px solid #f1f5f9 }
+.link-list li a { color:#0b1220; font-weight:700 }
+.overview-card.highlight .link-list li a { color:white }
+
+.search-row { display:flex; gap:12px }
+
+.footer { text-align:center; color:var(--muted); padding:28px 20px }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { order:2 }
+  .hero-left { order:1 }
+  .main-nav { display:none }
+}
+
+@media (min-width:901px) {
+  .hero-panel { grid-template-columns: repeat(1,1fr) }
+}
+
+

@@ -1,0 +1,112 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sarkari Result</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">
+          <a href="/" class="logo">Sarkari<span class="dot">Result</span></a>
+          <nav class="main-nav">
+            <a href="#jobs">Jobs</a>
+            <a href="#">Results</a>
+            <a href="#">Admit Cards</a>
+            <a href="/admin.html" class="nav-cta">Admin</a>
+          </nav>
+        </div>
+        <div class="topbar-actions">
+          <a class="whatsapp" href="#">Join WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="container hero">
+        <div class="hero-left">
+          <p class="eyebrow">Sarkari Result</p>
+          <h1>Latest Government Jobs, Results & Admit Cards</h1>
+          <p class="hero-copy">Fresh alerts every day — exam notifications, admit-cards, and results across central & state departments.</p>
+
+          <div class="hero-actions">
+            <a href="#jobs" class="button button-primary">Explore Jobs</a>
+            <a href="/admin.html" class="button button-secondary">Add Entry</a>
+          </div>
+
+          <div class="quick-search">
+            <input id="q" placeholder="Search jobs, exams or locations" />
+            <button id="searchBtn">Search</button>
+          </div>
+        </div>
+
+        <aside class="hero-right">
+          <div class="hero-badge">Top Alerts</div>
+          <div class="hero-panel">
+            <div class="hero-panel-item">
+              <h3>12,256</h3>
+              <p>SSC Posts</p>
+            </div>
+            <div class="hero-panel-item">
+              <h3>44,000+</h3>
+              <p>BPSC Posts</p>
+            </div>
+            <div class="hero-panel-item">
+              <h3>New</h3>
+              <p>Admit Cards</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero-links">
+        <a class="hero-card red" href="#">SSC CGL Form 2026 <span>(12,256 Posts)</span></a>
+        <a class="hero-card yellow" href="#">Daily Exam Tips & Updates</a>
+        <a class="hero-card purple" href="#">RRB ALP Form 2026 <span>(11,127 Posts)</span></a>
+        <a class="hero-card blue" href="#">UPSSSC Lower PCS Form <span>(2516 Posts)</span></a>
+      </section>
+
+      <section class="overview-row">
+        <article class="overview-card">
+          <h2>Results</h2>
+          <p>Latest exam results released for SSC, UPSC, RRB, and more.</p>
+          <ul class="link-list">
+            <li><a href="#">SSC GD Constable Answer Key 2026 – Out</a></li>
+            <li><a href="#">UPSC Civil Services Pre Result 2026 – Out</a></li>
+            <li><a href="#">Bihar BTSC Pharmacist Result 2026 – Out</a></li>
+          </ul>
+        </article>
+
+        <article class="overview-card">
+          <h2>Admit Cards</h2>
+          <p>Download admit cards for upcoming government exams instantly.</p>
+          <ul class="link-list">
+            <li><a href="#">NTA NEET UG Re-Exam Admit Card 2026 – Out</a></li>
+            <li><a href="#">RRB NTPC Graduate Level CBT-II Admit Card 2026 – Out</a></li>
+            <li><a href="#">UPSC IES/ISS Admit Card 2026 – Out</a></li>
+          </ul>
+        </article>
+
+        <article class="overview-card highlight" id="jobs">
+          <div class="panel-header">
+            <h2>Latest Jobs</h2>
+            <div class="search-row">
+              <input id="q" placeholder="Search jobs" />
+              <button id="searchBtn">Search</button>
+            </div>
+          </div>
+          <ul id="list" class="link-list"></ul>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">Updated daily with the latest Sarkari job news and admit card alerts.</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
